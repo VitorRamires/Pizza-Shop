@@ -1,18 +1,28 @@
-import { ArrowRight, Search, X } from 'lucide-react'
+/* eslint-disable prettier/prettier */
+import { ArrowRight, Search, X } from "lucide-react";
 
-import { Button } from '@/components/ui/button'
-import { TableCell, TableRow } from '@/components/ui/table'
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { TableCell, TableRow } from "@/components/ui/table";
+
+import { OrderDetails } from "./order.details";
 
 export function OrdersRow() {
   return (
     <>
       <TableRow>
         <TableCell>
-          <Button variant="outline" size="sm">
-            <Search className="h-3 w-3" />
-            <span className="sr-only">Detalhes do pedido</span>
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline" size="sm">
+                <Search className="h-3 w-3" />
+                <span className="sr-only">Detalhes do pedido</span>
+              </Button>
+            </DialogTrigger>
+            <OrderDetails />
+          </Dialog>
         </TableCell>
+
         <TableCell className="font-mono text-sm font-medium">
           1231312312312
         </TableCell>
@@ -41,5 +51,5 @@ export function OrdersRow() {
         </TableCell>
       </TableRow>
     </>
-  )
+  );
 }

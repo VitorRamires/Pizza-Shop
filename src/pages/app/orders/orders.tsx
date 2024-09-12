@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable simple-import-sort/imports */
 import { Helmet } from "react-helmet-async";
 
 import {
@@ -10,6 +12,7 @@ import {
 
 import { OrderFilterForm } from "./order-table-filters";
 import { OrdersRow } from "./order-table-row";
+import { Pagination } from "@/components/pagination";
 
 export function Orders() {
   return (
@@ -44,6 +47,7 @@ export function Orders() {
             </TableBody>
           </Table>
         </div>
+        <Pagination pageIndex={0} totalCount={105} perPage={10} />
       </div>
     </>
   );
