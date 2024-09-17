@@ -7,7 +7,7 @@ import { CardOrdersAmountDay } from "./dashboard_orders-day-amount";
 import { CardOrdersAmountMonth } from "./dashboard_orders-mounth-amout";
 import { CardCanceledOrders } from "./dashboard_month-canceled-orders";
 import { RevenueChart } from "./chart_revenue";
-import { YAxis } from "recharts";
+import { PopularProducts } from "./chart_popular-products";
 
 export function Dashboard() {
   return (
@@ -23,6 +23,7 @@ export function Dashboard() {
         </div>
         <div className="grid grid-cols-9 gap-4">
           <RevenueChart />
+          <PopularProducts />
         </div>
       </div>
     </>

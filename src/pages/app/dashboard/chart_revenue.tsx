@@ -14,7 +14,6 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
   Line,
 } from "recharts";
 
@@ -46,6 +45,9 @@ export function RevenueChart() {
           <ResponsiveContainer width="100%" height={240}>
             <LineChart data={data} style={{ fontSize: 12 }}>
               <YAxis stroke="#888" axisLine={false} tickLine={false} width={80} tickFormatter={(value: number) => value.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})}/>
+
+              <CartesianGrid vertical = {false} className="stroke-muted"/>
+
               <XAxis dataKey="date" axisLine={false} tickLine={false} width={80} dy={16}/>
               <Line type="linear" strokeWidth={2} dataKey="revenue" stroke={colors.violet['400']}></Line>
             </LineChart>
